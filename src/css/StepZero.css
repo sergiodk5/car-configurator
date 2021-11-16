@@ -1,0 +1,62 @@
+.ecc-form__step.ecc-form__step--zero {
+    width: 100%;
+}
+
+.ecc-step__model {
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 4rem;
+    cursor: pointer;
+    width: 49.5%;
+    margin: 0 0 1rem;
+    box-sizing: border-box;
+    cursor: pointer;
+    border: 2px solid rgba(0, 0, 0, .08);
+    align-items: center;
+}
+
+.ecc-step__model:nth-child(2n+1) {
+    margin-right: .5%;
+}
+
+.ecc-step__model:nth-child(2n) {
+    margin-left: .5%;
+}
+
+.ecc-step__model:hover {
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
+}
+
+.ecc-step__model.selected {
+    border-color: rgba(0, 66, 122, .3);
+}
+
+.ecc-model__image {
+    width: 300px;
+}
+
+.ecc-model__selector {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.ecc-model__title {
+    color: #00427a;
+    font-size: 2rem;
+}
+
+.ecc-model__price {
+    text-align: center;
+    font-size: 2rem;
+    color: #00427a;
+}
+
+.ecc-model__price span {
+    font-size: 1.5rem;
+    margin-right: .2rem;
+}

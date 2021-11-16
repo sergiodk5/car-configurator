@@ -1,0 +1,46 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#eccForm, #eccForm * {
+  box-sizing: border-box;
+}
+#eccForm {
+    max-width: 1320px;
+    margin: 0 auto;
+}
+#eccForm ul {
+    margin-bottom: 0;
+}
+
+.ecc-sidebar {
+    margin: 0;
+    list-style: none;
+    padding: 1rem 1rem 0;
+    background: #efefef;
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 2rem solid #efefef;
+}
+
+.ecc-sidebar.fixed-height {
+    height: 748px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.ecc-form img {
+    max-width: 100%;
+    height: auto;
+}
+
+.ecc-form__step {
+    width: 35%;
+}
+
+.ecc-form__content {
+    display: flex;
+    justify-content: space-between;
+}

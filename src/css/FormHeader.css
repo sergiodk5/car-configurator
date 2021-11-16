@@ -1,0 +1,46 @@
+.ecc-header__indicator {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ecc-steps {
+    margin: 0 1rem 0 0;
+    padding: 1rem;
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.ecc-step {
+    margin-right: 1rem;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+    color: rgba(0, 0, 0, .3);
+    font-size: 1rem;
+    line-height: 2;
+}
+
+.ecc-step:hover {
+    color: rgba(0, 0, 0, .6);
+    border-color: rgba(0, 0, 0, .6);
+}
+
+.ecc-step.completed {
+    color: #000;
+    border-color: #000;
+}
+
+.ecc-step.current, .ecc-step.completed:hover {
+    color: #00427a;
+    border-color: #00427a;
+}
+
+.ecc-step.completed, .ecc-step.current {
+    cursor: pointer;
+}
+
+.ecc-total-price {
+    color: #00427a;
+    font-size: 1.2rem;
+    font-weight: bold;
+}

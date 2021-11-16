@@ -1,9 +1,9 @@
 import { useCar } from '../../context/carContext'
 import '../../css/StepOne.css'
 
-const Battery = ({ btr, id }) => {
+const Battery = ({ btr }) => {
   return (
-    <li key={id} className='ecc-step__battery'>
+    <li className='ecc-step__battery'>
       <div className='ecc-battery__image'>
         <img src={btr.image} alt={btr.type} />
       </div>
@@ -25,7 +25,7 @@ const StepOne = () => {
     <div className='ecc-form__step ecc-form__step--one'>
       <ul className='ecc-sidebar fixed-height ecc-step__batteries'>
         {car.batteries.map((btr, idx) => (
-          <Battery key={idx} btr={btr} id={idx} />
+          <Battery key={idx} btr={btr} />
         ))}
       </ul>
     </div>

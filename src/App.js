@@ -6,9 +6,9 @@ import StepProvider from './context/formContext'
 import StepZero from './components/Content/StepZero'
 import CarProvider from './context/carContext'
 import StepOne from './components/Content/SteoOne'
+import StepTwo from './components/Content/StepTwo'
+import StepThree from './components/Content/StepThree'
 
-const StepTwo = () => <h1>StepTwo</h1>
-const StepThree = () => <h1>StepThree</h1>
 const StepFour = () => <h1>StepFour</h1>
 const StepFive = () => <h1>StepFive</h1>
 const StepSix = () => <h1>StepSix</h1>

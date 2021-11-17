@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { useMyCar, useCar } from '../../context/carContext'
 import { useStep } from '../../context/formContext'
 import '../../css/StepZero.css'
-import cars from '../../data/data'
+import { cars } from '../../data/data'
 
 const Model = ({ cr }) => {
   const { setMyCar, id } = useMyCar()

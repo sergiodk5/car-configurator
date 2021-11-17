@@ -5,7 +5,7 @@ import './css/App.css'
 import StepProvider from './context/formContext'
 import StepZero from './components/Content/StepZero'
 import CarProvider from './context/carContext'
-import StepOne from './components/Content/SteoOne'
+import StepOne from './components/Content/StepOne'
 import StepTwo from './components/Content/StepTwo'
 import StepThree from './components/Content/StepThree'
 

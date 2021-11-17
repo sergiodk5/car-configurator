@@ -11,7 +11,7 @@ const initialCarState = {
   image: 'null',
   battery: {},
   color: {},
-  interior: {},
+  interiors: {},
   components: [],
 }
 
@@ -39,6 +39,15 @@ export default function CarProvider({ children }) {
     components: state.components,
     setMyCar: (car) => {
       dispatch({ type: 'SET_MODEL', car })
+    },
+    setBattery: (battery) => {
+      dispatch({ type: 'SET_BATTERY', battery })
+    },
+    setColor: (color) => {
+      dispatch({ type: 'SET_COLOR', color })
+    },
+    setInterior: (interior) => {
+      dispatch({ type: 'SET_INTERIOR', interior })
     },
   }
 

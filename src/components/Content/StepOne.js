@@ -1,16 +1,26 @@
-import { useCar } from '../../context/carContext'
+import { useEffect } from 'react'
+import { useStep } from '../../context/formContext'
+import { useMyCar } from '../../context/carContext'
+import { batteries } from '../../data/data'
 import '../../css/StepOne.css'
 
 const Battery = ({ btr }) => {
+  const { setBattery, battery } = useMyCar()
+
   return (
-    <li className='ecc-step__battery'>
+    <li
+      className={`ecc-step__battery ${
+        battery?.id === btr.id ? 'selected' : ''
+      }`}
+      onClick={() => setBattery(btr)}
+    >
       <div className='ecc-battery__image'>
         <img src={btr.image} alt={btr.type} />
       </div>
 
       <div className='ecc-battery__title'>{btr.type}</div>
       <div className='ecc-battery__kwh'>{btr.kWh} kWh</div>
-      <div className='ecc-battery_range'>
+      <div className='ecc-battery__range'>
         <span>Μέγιστη Αυτονομία</span>
         {btr.maxRange}
       </div>
@@ -20,11 +30,23 @@ const Battery = ({ btr }) => {
 }
 
 const StepOne = () => {
-  const { car } = useCar()
+  const { setNextStep } = useStep()
+  const { model, battery } = useMyCar()
+
+  const btrs = batteries.filter((obj) => {
+    return obj.models.includes(model)
+  })
+
+  useEffect(() => {
+    if (battery?.id) {
+      setNextStep(true)
+    }
+  }, [battery])
+
   return (
     <div className='ecc-form__step ecc-form__step--one'>
       <ul className='ecc-sidebar fixed-height ecc-step__batteries'>
-        {car.batteries.map((btr, idx) => (
+        {btrs.map((btr, idx) => (
           <Battery key={idx} btr={btr} />
         ))}
       </ul>

@@ -8,8 +8,8 @@ import CarProvider from './context/carContext'
 import StepOne from './components/Content/StepOne'
 import StepTwo from './components/Content/StepTwo'
 import StepThree from './components/Content/StepThree'
+import StepFour from './components/Content/StepFour'
 
-const StepFour = () => <h1>StepFour</h1>
 const StepFive = () => <h1>StepFive</h1>
 const StepSix = () => <h1>StepSix</h1>
 const StepSeven = () => <h1>StepSeven</h1>

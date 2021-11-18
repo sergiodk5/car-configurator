@@ -32,6 +32,28 @@ export const myCarReducer = (state, action) => {
         ...state,
         interior: action.interior,
       }
+    case 'SET_COMPONENTS':
+      let newComponents = state.components
+
+      if (
+        newComponents.length &&
+        newComponents.some(
+          (component) => component.name === action.component.name
+        )
+      ) {
+        console.log(
+          newComponents.filter(
+            (component) => component.name !== action.component.name
+          )
+        )
+      } else {
+        newComponents.push(action.component)
+      }
+
+      return {
+        ...state,
+        components: newComponents,
+      }
     default:
       console.log('error')
       throw new Error()

@@ -49,6 +49,9 @@ export default function CarProvider({ children }) {
     setInterior: (interior) => {
       dispatch({ type: 'SET_INTERIOR', interior })
     },
+    setComponents: (component) => {
+      dispatch({ type: 'SET_COMPONENTS', component })
+    },
   }
 
   return (

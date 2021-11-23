@@ -9,8 +9,8 @@ import StepOne from './components/Content/StepOne'
 import StepTwo from './components/Content/StepTwo'
 import StepThree from './components/Content/StepThree'
 import StepFour from './components/Content/StepFour'
+import StepFive from './components/Content/StepFive'
 
-const StepFive = () => <h1>StepFive</h1>
 const StepSix = () => <h1>StepSix</h1>
 const StepSeven = () => <h1>StepSeven</h1>
 const StepEight = () => <h1>StepEight</h1>

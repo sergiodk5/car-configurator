@@ -12,6 +12,8 @@ export const myCarReducer = (state, action) => {
         color: {},
         interior: {},
         components: [],
+        guarantee: {},
+        payment: null,
       }
     case 'SET_BATTERY':
       return {
@@ -48,6 +50,16 @@ export const myCarReducer = (state, action) => {
       return {
         ...state,
         components: newComponents,
+      }
+    case 'SET_GUARANTEE':
+      return {
+        ...state,
+        guarantee: action.guarantee,
+      }
+    case 'SET_PAYMENT':
+      return {
+        ...state,
+        payment: action.payment,
       }
     default:
       console.log('error')

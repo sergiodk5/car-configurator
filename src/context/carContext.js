@@ -13,13 +13,15 @@ const MyCarContext = createContext()
 
 const initialCarState = {
   id: 0,
-  model: 'null',
+  model: null,
   price: 0,
-  image: 'null',
+  image: null,
   battery: {},
   color: {},
   interiors: {},
   components: [],
+  guarantee: {},
+  payment: null,
 }
 
 export function useCar() {
@@ -44,6 +46,8 @@ export default function CarProvider({ children }) {
     color: state.color,
     interior: state.interior,
     components: state.components,
+    guarantee: state.guarantee,
+    payment: state.payment,
     setMyCar: (car) => {
       dispatch({ type: 'SET_MODEL', car })
     },
@@ -59,11 +63,17 @@ export default function CarProvider({ children }) {
     setComponents: (component) => {
       dispatch({ type: 'SET_COMPONENTS', component })
     },
+    setGuarantee: (guarantee) => {
+      dispatch({ type: 'SET_GUARANTEE', guarantee })
+    },
+    setPayment: (payment) => {
+      dispatch({ type: 'SET_PAYMENT', payment })
+    },
   }
 
-  useEffect(() => {
-    console.log(state.components)
-  }, [state])
+  //   useEffect(() => {
+  //     console.log(state.components)
+  //   }, [state])
 
   return (
     <CarContext.Provider value={carProvider}>

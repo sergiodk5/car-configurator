@@ -33,21 +33,16 @@ export const myCarReducer = (state, action) => {
         interior: action.interior,
       }
     case 'SET_COMPONENTS':
-      let newComponents = state.components
+      let newComponents = []
 
       if (
-        newComponents.length &&
-        newComponents.some(
-          (component) => component.name === action.component.name
-        )
+        state.components.some((comp) => comp.name === action.component.name)
       ) {
-        console.log(
-          newComponents.filter(
-            (component) => component.name !== action.component.name
-          )
+        newComponents = state.components.filter(
+          (comp) => comp.name !== action.component.name
         )
       } else {
-        newComponents.push(action.component)
+        newComponents = state.components.concat(action.component)
       }
 
       return {

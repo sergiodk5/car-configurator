@@ -1,4 +1,11 @@
-import { createContext, useContext, useState, useMemo, useReducer } from 'react'
+import {
+  createContext,
+  useContext,
+  useState,
+  useMemo,
+  useReducer,
+  useEffect,
+} from 'react'
 import { myCarReducer } from '../reducers/carReducer'
 
 const CarContext = createContext()
@@ -53,6 +60,10 @@ export default function CarProvider({ children }) {
       dispatch({ type: 'SET_COMPONENTS', component })
     },
   }
+
+  useEffect(() => {
+    console.log(state.components)
+  }, [state])
 
   return (
     <CarContext.Provider value={carProvider}>

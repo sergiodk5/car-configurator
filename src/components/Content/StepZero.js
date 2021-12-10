@@ -7,10 +7,13 @@ import { cars } from '../../data/data'
 const Model = ({ cr }) => {
   const { setMyCar, id } = useMyCar()
   const { setCar } = useCar()
+  const { step, increaseStep, setNextStep } = useStep()
 
   const handleClick = () => {
     setCar(cr)
     setMyCar(cr)
+    setNextStep(true)
+    increaseStep(step)
   }
   return (
     <li

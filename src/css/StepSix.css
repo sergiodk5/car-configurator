@@ -1,8 +1,8 @@
-.ecc-sidebar.ecc-step__guarantees {
+.ecc-sidebar.ecc-step__payments {
     justify-content: space-between;
 }
 
-.ecc-step__guarantee {
+.ecc-step__payment {
     background: #fff;
     cursor: pointer;
     margin-bottom: 1rem;
@@ -16,17 +16,10 @@
     text-align: center;
 }
 
-.ecc-step__guarantee.selected {
+.ecc-step__payment.selected {
   border-color: rgba(0, 66, 122, 0.3);
 }
 
-.ecc-step__guarantee:hover {
+.ecc-step__payment:hover {
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
-}
-
-.ecc-step__component__add-years {
-    color: #00427a;
-    font-size: 2rem;
-    opacity: .5;
-    font-weight: bold;
 }

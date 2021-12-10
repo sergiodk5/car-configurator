@@ -6,13 +6,23 @@ import '../../css/StepFive.css'
 
 const Guarantee = ({ gte }) => {
   const { guarantee, setGuarantee } = useMyCar()
+  const { step, increaseStep, setNextStep } = useStep()
+
+  const handleClick = () => {
+    setGuarantee(gte)
+    setNextStep(true)
+    increaseStep(step)
+  }
   return (
     <li
       className={`ecc-step__guarantee ${
         gte.type === guarantee.type ? 'selected' : ''
       } `}
-      onClick={() => setGuarantee(gte)}
+      onClick={handleClick}
     >
+      <div className='ecc-step__component__add-years'>
+        {0 === gte.add_years ? 'Standard' : '+' + gte.add_years}
+      </div>
       <div className='ecc-step__component__type'>{gte.type}</div>
       <div className='ecc-step__component__price'>+{gte.price}€</div>
     </li>

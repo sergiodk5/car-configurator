@@ -6,13 +6,20 @@ import '../../css/StepOne.css'
 
 const Battery = ({ btr }) => {
   const { setBattery, battery } = useMyCar()
+  const { step, increaseStep, setNextStep } = useStep()
+
+  const handleClick = () => {
+    setBattery(btr)
+    setNextStep(true)
+    increaseStep(step)
+  }
 
   return (
     <li
       className={`ecc-step__battery ${
         battery?.id === btr.id ? 'selected' : ''
       }`}
-      onClick={() => setBattery(btr)}
+      onClick={handleClick}
     >
       <div className='ecc-battery__image'>
         <img src={btr.image} alt={btr.type} />

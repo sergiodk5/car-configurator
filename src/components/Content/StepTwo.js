@@ -22,7 +22,7 @@ const Color = ({ clr }) => {
 
 const StepTwo = () => {
   const { setNextStep } = useStep()
-  const { model, color } = useMyCar()
+  const { model, color, setColor } = useMyCar()
 
   const clrs = colors.filter((obj) => {
     return (
@@ -32,6 +32,12 @@ const StepTwo = () => {
       }).length
     )
   })
+
+  useEffect(() => {
+    if (1 === clrs.length) {
+      setColor(clrs[0])
+    }
+  }, [])
 
   useEffect(() => {
     if (color?.name) {

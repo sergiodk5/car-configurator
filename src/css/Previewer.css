@@ -5,6 +5,10 @@
     padding: 1rem;
 }
 
+.ecc-previewer.full {
+    width: 100%;
+}
+
 .ecc-form__step.ecc-form__step--one {
     width: 35%;
 }

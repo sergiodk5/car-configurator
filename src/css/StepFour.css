@@ -1,4 +1,12 @@
 .ecc-sidebar.ecc-step__components {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+}
+
+.ecc-sidebar.ecc-step__components {
     justify-content: space-between;
 }
 
@@ -8,12 +16,27 @@
     margin-bottom: 1rem;
     border: 2px solid rgba(0, 0, 0, 0.08);
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     padding: 1rem;
-    width: 48%;
-    text-align: center;
+    width: 100%;
+    text-align: left;
+}
+
+.ecc-step__component__indicator {
+    width: 30px;
+    margin-right: 1rem;
+}
+
+.ecc-step__component__indicator svg {
+    color: #00427a;
+}
+
+.ecc-step__component__wrapper {
+    width: 100%;
+}
+
+.ecc-step__component__price {
+    text-align: right;
+    margin-top: .5rem;
 }
 
 .ecc-step__component.selected {

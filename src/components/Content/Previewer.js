@@ -1,11 +1,11 @@
 import { useMyCar } from '../../context/carContext'
 import '../../css/Previewer.css'
 
-const Previewer = () => {
+const Previewer = ({ totalWidth }) => {
   const myCar = useMyCar()
 
   return (
-    <div className='ecc-previewer'>
+    <div className={`ecc-previewer ${totalWidth}`}>
       <div className='ecc-previewer__image'>
         <img src={myCar.image} alt={myCar.model} />
       </div>

@@ -1,0 +1,59 @@
+.ecc-form__step.ecc-form__step--seven {
+    width: 100%;
+}
+
+.ecc-client-info {
+    background: #fff;
+    border: 2px solid rgba(0, 0, 0, 0.08);
+    padding: 1rem;
+    width: 100%;
+}
+
+.ecc-input__group {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 1rem;
+}
+
+.ecc-input__item {
+    position: relative;
+    margin: 0 1%;
+    padding-top: 26px;
+    flex: 1 1 auto;
+}
+
+.ecc-input__item:first-child {
+    margin-left: 0;
+}
+.ecc-input__item:last-child {
+    margin-right: 0;
+}
+
+.ecc-input__input {
+    width: 100%;
+}
+
+.ecc-input__label {
+    position: absolute;
+    top: calc(100% - 1rem);
+    width: 100%;
+    left: 0;
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 1rem;
+    transition: all .2s ease;
+}
+
+.ecc-input__input:focus + .ecc-input__label, .ecc-input__label.hasValue {
+    top: 0;
+}
+
+.ecc-input__input {
+    border: none;
+    border-bottom: 2px solid #000;
+    background: transparent;
+}
+
+.ecc-input__input:focus-visible {
+    outline: none;
+}

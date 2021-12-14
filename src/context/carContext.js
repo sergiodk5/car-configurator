@@ -1,11 +1,4 @@
-import {
-  createContext,
-  useContext,
-  useState,
-  useMemo,
-  useReducer,
-  useEffect,
-} from 'react'
+import { createContext, useContext, useState, useMemo, useReducer } from 'react'
 import { myCarReducer } from '../reducers/carReducer'
 
 const CarContext = createContext()
@@ -18,7 +11,7 @@ const initialCarState = {
   image: null,
   battery: {},
   color: {},
-  interiors: {},
+  interior: {},
   components: [],
   guarantee: {},
   payment: null,
@@ -70,10 +63,6 @@ export default function CarProvider({ children }) {
       dispatch({ type: 'SET_PAYMENT', payment })
     },
   }
-
-  //   useEffect(() => {
-  //     console.log(state.components)
-  //   }, [state])
 
   return (
     <CarContext.Provider value={carProvider}>

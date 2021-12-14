@@ -11,17 +11,12 @@ const Content = ({ children }) => {
     setSteps(steps)
   }, [])
 
-  //   useEffect(() => {
-  // console.log(step + ' of ' + steps)
-  //   }, [step])
-
   return (
     <div className='ecc-form__content'>
-      {0 < step && step !== 8 ? (
+      {0 < step && 7 > step ? (
         <Previewer totalWidth={steps - 1 === step ? 'full' : 'half'} />
       ) : null}
 
-      {/*steps - 1 !== step ? pages[step] : null*/}
       {pages[step]}
     </div>
   )

@@ -18,7 +18,9 @@
 }
 
 .ecc-previewer__image img {
-    width: 992px;
+    width: auto;
+    height: 400px;
+    object-fit: cover;
 }
 
 .ecc-previewer__extras {

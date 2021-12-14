@@ -31,27 +31,25 @@
 
 .ecc-input__input {
     width: 100%;
+    border: none !important;
+    border-bottom: 1px solid #00427a !important;
+    background: transparent !important;
 }
 
 .ecc-input__label {
     position: absolute;
-    top: calc(100% - 1rem);
+    top: calc(100% - 1.8rem);
     width: 100%;
-    left: 0;
-    font-size: 1rem;
-    font-weight: normal;
-    line-height: 1rem;
+    left: .4rem;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.6rem;
     transition: all .2s ease;
+    color: #00427a;
 }
 
 .ecc-input__input:focus + .ecc-input__label, .ecc-input__label.hasValue {
     top: 0;
-}
-
-.ecc-input__input {
-    border: none;
-    border-bottom: 2px solid #000;
-    background: transparent;
 }
 
 .ecc-input__input:focus-visible {

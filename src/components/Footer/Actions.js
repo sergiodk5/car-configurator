@@ -17,10 +17,6 @@ const Actions = () => {
           Επόμενο
         </span>
       )}
-
-      {steps - 1 === step && (
-        <span className='ctrl-btn btn-send'>Αποστολή</span>
-      )}
     </div>
   )
 }

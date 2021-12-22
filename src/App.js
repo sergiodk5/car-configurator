@@ -12,7 +12,6 @@ import StepFour from './components/Content/StepFour'
 import StepFive from './components/Content/StepFive'
 import StepSix from './components/Content/StepSix'
 import StepSeven from './components/Content/StepSeven'
-import StepEight from './components/Content/StepEight'
 import Footer from './components/Footer'
 
 function App() {
@@ -32,7 +31,6 @@ function App() {
                 <StepFive />
                 <StepSix />
                 <StepSeven />
-                <StepEight />
               </Content>
             </ClientProvider>
             <Footer />

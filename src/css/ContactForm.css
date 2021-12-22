@@ -1,0 +1,146 @@
+.ecc-client-info {
+    background: #fff;
+    border: 2px solid rgba(0, 0, 0, 0.08);
+    padding: 1rem;
+    width: 100%;
+    position: relative;
+}
+
+.ecc-input__group {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 1rem;
+}
+
+.ecc-input__item {
+    position: relative;
+    margin: 0 1%;
+    padding-top: 26px;
+    flex: 1 1 auto;
+}
+
+.ecc-input__item:first-child {
+    margin-left: 0;
+}
+.ecc-input__item:last-child {
+    margin-right: 0;
+}
+
+.ecc-input__input {
+    width: 100%;
+    border: none !important;
+    border-bottom: 1px solid #00427a !important;
+    background: transparent !important;
+}
+
+.ecc-input__label {
+    position: absolute;
+    top: calc(100% - 1.8rem);
+    width: 100%;
+    left: .4rem;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.6rem;
+    transition: all .2s ease;
+    color: #00427a;
+}
+
+.ecc-input__input:focus + .ecc-input__label, .ecc-input__label.hasValue {
+    top: 0;
+}
+
+.ecc-input__input:focus-visible {
+    outline: none;
+}
+
+.ecc-input__item.error .ecc-input__input {
+    border-bottom: 1px solid red !important;
+}
+
+.ecc-input__item.error .ecc-input__label {
+    color: red;
+}
+
+input.btn-send {
+    margin-left: auto;
+    background: #00427a;
+    color: #fff;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    border: 2px solid #00427a;
+}
+
+.ecc-input__item.ecc-input--submit {
+    text-align: right;
+}
+
+.ecc-form-loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, .4);
+    z-index: 9;
+}
+
+.spinner {
+  height: 60px;
+  width: 60px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -30px 0 0 -30px;
+  -webkit-animation: rotation 1s infinite linear;
+  -moz-animation: rotation 1s infinite linear;
+  -o-animation: rotation 1s infinite linear;
+  animation: rotation 1s infinite linear;
+  border: 6px solid rgba(0, 66, 122, 0.2);
+  border-radius: 100%;
+}
+.spinner:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: -6px;
+  top: -6px;
+  height: 100%;
+  width: 100%;
+  border-top: 6px solid rgba(0, 66, 122, 0.8);
+  border-left: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-radius: 100%;
+}
+@-webkit-keyframes rotation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+@-moz-keyframes rotation {
+  from {
+    -moz-transform: rotate(0deg);
+  }
+  to {
+    -moz-transform: rotate(359deg);
+  }
+}
+@-o-keyframes rotation {
+  from {
+    -o-transform: rotate(0deg);
+  }
+  to {
+    -o-transform: rotate(359deg);
+  }
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}

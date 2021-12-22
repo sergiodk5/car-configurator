@@ -1,0 +1,47 @@
+.overview {
+    background: #fff;
+    border: 2px solid rgba(0, 0, 0, 0.08);
+    padding: 1rem;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.ecc-summary__container {
+    display: flex;
+    justify-content: flex-start;
+}
+.ecc-summary__wrapper {
+    width: 31.333%;
+    border: 2px solid rgba(0, 0, 0, 0.08);
+    margin: 0 1% 1rem;
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+.ecc-summary__img {
+    text-align: center;
+}
+
+.ecc-summary__img img {
+    width: auto;
+    height: 200px;
+    max-width: initial;
+    object-fit: cover;
+}
+
+.ecc-summary__title {
+    text-align: center;
+}
+
+.ecc-summary__title h4 {
+    margin: 0;
+}
+
+.ecc-summary__title ul li h5 {
+    text-align: left;
+}
+
+.ecc-summary__descr p {
+    text-align: center;
+    margin: 0;
+}

@@ -1,18 +1,13 @@
-import { useEffect } from 'react'
-import { useStep } from '../../context/formContext'
 import '../../css/StepSeven.css'
+import ContactForm from '../partials/ContactForm'
+import Overview from '../partials/Overview'
 
 const StepSeven = () => {
-  const { setNextStep } = useStep()
-
-  useEffect(() => {
-    setNextStep(true)
-  }, [])
-
   return (
     <div className='ecc-form__step ecc-form__step--seven'>
       <div className='ecc-sidebar ecc-step__overview'>
-        <h1>Step Seven</h1>
+        <ContactForm />
+        <Overview />
       </div>
     </div>
   )

@@ -1,33 +1,7 @@
-import { useEffect, useState } from 'react'
-import { useClient } from '../../context/clientContext'
 import '../../css/ContactForm.css'
+import Input from './Input'
 
-const initialFromElemsState = {
-  lastName: true,
-  firstName: true,
-  address: true,
-  city: true,
-  mobile: true,
-  email: true,
-}
-
-const ContactForm = () => {
-  const validEmailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
-  const { client, setClient } = useClient()
-  const [formElems, setFormElems] = useState(initialFromElemsState)
-  const [loader, setLoader] = useState(false)
-
-  useEffect(() => {
-    setFormElems({
-      lastName: '' !== client.lastName,
-      firstName: '' !== client.firstName,
-      address: '' !== client.address,
-      city: '' !== client.city,
-      mobile: '' !== client.mobile,
-      email: client.email.match(validEmailFormat) ? true : false,
-    })
-  }, [client])
-
+const ContactForm = ({ client, setClient, formElems, handleSubmit }) => {
   const handleChange = (e) => {
     setClient({
       ...client,
@@ -35,299 +9,134 @@ const ContactForm = () => {
     })
   }
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-
-    let errors = false
-    for (const elem in formElems) {
-      if (formElems.hasOwnProperty(elem)) {
-        errors = !errors ? !formElems[elem] : true
-      }
-    }
-
-    if (errors) {
-      console.log('Η φόρμα δεν έχει συμπληρωθεί σωστά.')
-      setLoader(false)
-    } else {
-      setLoader(true)
-      // Next steps:
-      // Send ajax call to an API with the data.
-      // Get the response and redirect to a location
-    }
-  }
-
   return (
-    <form className='ecc-client-info' onSubmit={handleSubmit}>
-      {loader && (
-        <div className='ecc-form-loader'>
-          <div className='spinner'></div>
-        </div>
-      )}
-
+    <form className='ecc-client-info' onSubmit={(e) => handleSubmit(e)}>
       <h1>Εκδήλωσης Ενδιαφέροντος</h1>
 
       <div className='ecc-client__form'>
         <div className='ecc-input__group'>
-          <div
-            className={`ecc-input__item ${formElems.lastName ? '' : 'error'}`}
-          >
-            <input
-              type='text'
-              name='lastName'
-              value={client.lastName}
-              id='lastName'
-              className='ecc-input__input'
-              onChange={handleChange}
-            />
-            <label
-              htmlFor='lastName'
-              className={`ecc-input__label ${
-                client.lastName && client.lastName !== '' ? 'hasValue' : ''
-              }`}
-            >
-              Επίθετο *
-            </label>
-          </div>
+          <Input
+            name='lastName'
+            formInput={formElems.lastName}
+            clientValue={client.lastName}
+            label='Επίθετο'
+            required={true}
+            handleChange={handleChange}
+          />
 
-          <div
-            className={`ecc-input__item ${formElems.firstName ? '' : 'error'}`}
-          >
-            <input
-              type='text'
-              name='firstName'
-              value={client.firstName}
-              id='firstName'
-              className='ecc-input__input'
-              onChange={handleChange}
-            />
-            <label
-              htmlFor='firstName'
-              className={`ecc-input__label ${
-                client.firstName && client.firstName !== '' ? 'hasValue' : ''
-              }`}
-            >
-              Όνομα *
-            </label>
-          </div>
+          <Input
+            name='firstName'
+            formInput={formElems.firstName}
+            clientValue={client.firstName}
+            label='Όνομα'
+            required={true}
+            handleChange={handleChange}
+          />
 
-          <div className='ecc-input__item'>
-            <input
-              type='text'
-              name='companyName'
-              value={client.companyName}
-              id='companyName'
-              className='ecc-input__input'
-              onChange={handleChange}
-            />
-            <label
-              htmlFor='companyName'
-              className={`ecc-input__label ${
-                client.companyName && client.companyName !== ''
-                  ? 'hasValue'
-                  : ''
-              }`}
-            >
-              Εταιρεία
-            </label>
-          </div>
+          <Input
+            name='companyName'
+            formInput={true}
+            clientValue={client.companyName}
+            label='Εταιρεία'
+            required={false}
+            handleChange={handleChange}
+          />
         </div>
 
         <div className='ecc-input__group'>
-          <div
-            className={`ecc-input__item ${formElems.address ? '' : 'error'}`}
-          >
-            <input
-              type='text'
-              name='address'
-              value={client.address}
-              id='address'
-              className='ecc-input__input'
-              onChange={handleChange}
-            />
-            <label
-              htmlFor='address'
-              className={`ecc-input__label ${
-                client.address && client.address !== '' ? 'hasValue' : ''
-              }`}
-            >
-              Διεύθυνση *
-            </label>
-          </div>
+          <Input
+            name='address'
+            formInput={formElems.address}
+            clientValue={client.address}
+            label='Διεύθυνση'
+            required={true}
+            handleChange={handleChange}
+          />
 
-          <div className='ecc-input__item'>
-            <input
-              type='text'
-              name='zip'
-              value={client.zip}
-              id='zip'
-              className='ecc-input__input'
-              onChange={handleChange}
-            />
-            <label
-              htmlFor='zip'
-              className={`ecc-input__label ${
-                client.zip && client.zip !== '' ? 'hasValue' : ''
-              }`}
-            >
-              Τ.Κ.
-            </label>
-          </div>
+          <Input
+            name='zip'
+            formInput={formElems.zip}
+            clientValue={client.zip}
+            label='Τ.Κ.'
+            required={true}
+            handleChange={handleChange}
+          />
 
-          <div className={`ecc-input__item ${formElems.city ? '' : 'error'}`}>
-            <input
-              type='text'
-              name='city'
-              value={client.city}
-              id='city'
-              className='ecc-input__input'
-              onChange={handleChange}
-            />
-            <label
-              htmlFor='city'
-              className={`ecc-input__label ${
-                client.city && client.city !== '' ? 'hasValue' : ''
-              }`}
-            >
-              Πόλη *
-            </label>
-          </div>
+          <Input
+            name='city'
+            formInput={formElems.city}
+            clientValue={client.city}
+            label='Πόλη'
+            required={true}
+            handleChange={handleChange}
+          />
 
-          <div className='ecc-input__item'>
-            <input
-              type='text'
-              name='state'
-              value={client.state}
-              id='state'
-              className='ecc-input__input'
-              onChange={handleChange}
-            />
-            <label
-              htmlFor='state'
-              className={`ecc-input__label ${
-                client.state && client.state !== '' ? 'hasValue' : ''
-              }`}
-            >
-              Νομός
-            </label>
-          </div>
+          <Input
+            name='state'
+            formInput={formElems.state}
+            clientValue={client.state}
+            label='Νομός'
+            required={true}
+            handleChange={handleChange}
+          />
         </div>
 
         <div className='ecc-input__group'>
-          <div className='ecc-input__item'>
-            <input
-              type='text'
-              name='phone'
-              value={client.phone}
-              id='phone'
-              className='ecc-input__input'
-              onChange={handleChange}
-            />
-            <label
-              htmlFor='phone'
-              className={`ecc-input__label ${
-                client.phone && client.phone !== '' ? 'hasValue' : ''
-              }`}
-            >
-              Τηλέφωνο
-            </label>
-          </div>
+          <Input
+            name='phone'
+            formInput={true}
+            clientValue={client.phone}
+            label='Τηλέφωνο'
+            required={false}
+            handleChange={handleChange}
+          />
 
-          <div className={`ecc-input__item ${formElems.mobile ? '' : 'error'}`}>
-            <input
-              type='text'
-              name='mobile'
-              value={client.mobile}
-              id='mobile'
-              className='ecc-input__input'
-              onChange={handleChange}
-            />
-            <label
-              htmlFor='mobile'
-              className={`ecc-input__label ${
-                client.mobile && client.mobile !== '' ? 'hasValue' : ''
-              }`}
-            >
-              Κινητό *
-            </label>
-          </div>
+          <Input
+            name='mobile'
+            formInput={formElems.mobile}
+            clientValue={client.mobile}
+            label='Κινητό'
+            required={true}
+            handleChange={handleChange}
+          />
 
-          <div className={`ecc-input__item ${formElems.email ? '' : 'error'}`}>
-            <input
-              type='text'
-              name='email'
-              value={client.email}
-              id='email'
-              className='ecc-input__input'
-              onChange={handleChange}
-            />
-            <label
-              htmlFor='email'
-              className={`ecc-input__label ${
-                client.email && client.email !== '' ? 'hasValue' : ''
-              }`}
-            >
-              Email *
-            </label>
-          </div>
+          <Input
+            name='email'
+            formInput={formElems.email}
+            clientValue={client.email}
+            label='Email'
+            required={true}
+            handleChange={handleChange}
+          />
         </div>
 
         <div className='ecc-input__group'>
-          <div className='ecc-input__item'>
-            <input
-              type='text'
-              name='vat'
-              value={client.vat}
-              id='vat'
-              className='ecc-input__input'
-              onChange={handleChange}
-            />
-            <label
-              htmlFor='vat'
-              className={`ecc-input__label ${
-                client.vat && client.vat !== '' ? 'hasValue' : ''
-              }`}
-            >
-              Α.Φ.Μ
-            </label>
-          </div>
+          <Input
+            name='vat'
+            formInput={true}
+            clientValue={client.vat}
+            label='Α.Φ.Μ'
+            required={false}
+            handleChange={handleChange}
+          />
 
-          <div className='ecc-input__item'>
-            <input
-              type='text'
-              name='ira'
-              value={client.ira}
-              id='ira'
-              className='ecc-input__input'
-              onChange={handleChange}
-            />
-            <label
-              htmlFor='ira'
-              className={`ecc-input__label ${
-                client.ira && client.ira !== '' ? 'hasValue' : ''
-              }`}
-            >
-              Δ.Ο.Υ
-            </label>
-          </div>
+          <Input
+            name='ira'
+            formInput={true}
+            clientValue={client.ira}
+            label='Δ.Ο.Υ'
+            required={false}
+            handleChange={handleChange}
+          />
 
-          <div className='ecc-input__item'>
-            <input
-              type='text'
-              name='profession'
-              value={client.profession}
-              id='profession'
-              className='ecc-input__input'
-              onChange={handleChange}
-            />
-            <label
-              htmlFor='profession'
-              className={`ecc-input__label ${
-                client.profession && client.profession !== '' ? 'hasValue' : ''
-              }`}
-            >
-              Επάγγελμα
-            </label>
-          </div>
+          <Input
+            name='profession'
+            formInput={true}
+            clientValue={client.profession}
+            label='Επάγγελμα'
+            required={false}
+            handleChange={handleChange}
+          />
         </div>
 
         <div className='ecc-input__group'>

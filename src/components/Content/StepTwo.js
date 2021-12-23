@@ -47,6 +47,7 @@ const StepTwo = () => {
 
   return (
     <div className='ecc-form__step ecc-form__step--two'>
+      <h2 className='ecc-mobile__header'>Επιλογή χρώματος</h2>
       <ul className='ecc-sidebar fixed-height ecc-step__colors'>
         {clrs.map((clr, idx) => (
           <Color key={idx} clr={clr} />

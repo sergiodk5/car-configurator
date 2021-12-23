@@ -52,6 +52,7 @@ const StepOne = () => {
 
   return (
     <div className='ecc-form__step ecc-form__step--one'>
+      <h2 className='ecc-mobile__header'>Επιλογή συσσωρευτή</h2>
       <ul className='ecc-sidebar fixed-height ecc-step__batteries'>
         {btrs.map((btr, idx) => (
           <Battery key={idx} btr={btr} />

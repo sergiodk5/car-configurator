@@ -26,6 +26,10 @@
     object-fit: cover;
 }
 
+.ecc-previewer__extras-title {
+    margin-top: auto;
+}
+
 .ecc-previewer__extras {
     display: flex;
 }
@@ -55,4 +59,19 @@
     height: 65px;
     border-radius: 50%;
     overflow: hidden;
+}
+
+@media only screen and (max-width: 767px) {
+    .ecc-previewer__extras {
+        display: none;
+    }
+
+    .ecc-previewer__image img {
+        width: 100%;
+        height: auto;
+    }
+
+    .ecc-previewer {
+        width: 100%;
+    }
 }

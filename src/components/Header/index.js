@@ -47,7 +47,7 @@ const Header = () => {
             <MenuItem key={idx} idx={idx} title={menu} />
           ))}
         </ul>
-        <div className='ecc-total-price'>{total}€</div>
+        <div className='ecc-total-price'>Διαμόρφωση Τιμής {total}€</div>
       </div>
     </div>
   )

@@ -1,5 +1,6 @@
 .ecc-sidebar.ecc-step__payments {
-    justify-content: space-between;
+    justify-content: flex-start;
+    flex-direction: column;
 }
 
 .ecc-step__payment {

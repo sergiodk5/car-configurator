@@ -95,6 +95,7 @@ const StepFour = () => {
 
   return (
     <div className='ecc-form__step ecc-form__step--four'>
+      <h2 className='ecc-mobile__header'>Επιλογή Εξωπλισμού</h2>
       <ul className='ecc-sidebar fixed-height ecc-step__components'>
         {cmps.map((component, idx) => (
           <Component key={idx} cmp={component} handleComponent={handleClick} />

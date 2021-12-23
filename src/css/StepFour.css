@@ -6,10 +6,6 @@
     flex-wrap: nowrap;
 }
 
-.ecc-sidebar.ecc-step__components {
-    justify-content: space-between;
-}
-
 .ecc-step__component {
     background: #fff;
     cursor: pointer;

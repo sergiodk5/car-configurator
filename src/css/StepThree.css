@@ -31,3 +31,25 @@
   font-size: 1.2rem;
   align-items: center;
 }
+
+@media only screen and (max-width: 1023px) {
+  .ecc-previewer__box {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .ecc-step__extra {
+    display: inline-block;
+    width: 100%;
+  }
+  .ecc-step__extra__info {
+    display: block;
+  }
+  .ecc-step__extra__type {
+    display: block;
+    max-width: 100%;
+    white-space: break-spaces;
+  }
+}

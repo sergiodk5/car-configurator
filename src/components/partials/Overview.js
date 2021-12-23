@@ -1,7 +1,8 @@
-import { useMyCar } from '../../context/carContext'
+import { useEffect, useState } from 'react'
+import priceCalculator from '../../utils/priceCalculator'
 import '../../css/Overview.css'
 
-const Overview = () => {
+const Overview = ({ handleSubmit, myCarProvider }) => {
   const {
     model,
     image,
@@ -12,7 +13,13 @@ const Overview = () => {
     components,
     guarantee,
     payment,
-  } = useMyCar()
+  } = myCarProvider
+
+  const [total, setTotal] = useState(0)
+
+  useEffect(() => {
+    setTotal(priceCalculator(myCarProvider))
+  }, [myCarProvider])
 
   return (
     <div className='overview'>
@@ -121,6 +128,25 @@ const Overview = () => {
               </div>
             </div>
           </div>
+
+          <div className='ecc-summary__wrapper ecc-total-box'>
+            <h3>Συνολικό Κόστος</h3>
+            <div className='ecc-ecc-summary__summary__item'>
+              <div className='ecc-summary__title'>
+                <h4 style={{ textAlign: 'left' }}>{total}€</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className='ecc-summary__container'>
+          <button
+            type='button'
+            className='btn-send'
+            onClick={(e) => handleSubmit(e)}
+          >
+            Αποστολή
+          </button>
         </div>
       </div>
     </div>

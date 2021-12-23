@@ -44,3 +44,25 @@ body {
     display: flex;
     justify-content: space-between;
 }
+
+.ecc-mobile__header {
+    display: none;
+}
+
+@media only screen and (max-width: 767px) {
+
+    .ecc-form__step {
+        width: 100%;
+        overflow-x: auto;
+        background: #efefef;
+    }
+    .ecc-form__content {
+        flex-direction: column;
+    }
+
+    .ecc-mobile__header {
+        display: block;
+        padding: 0 1rem;
+        margin: 1rem 0 0;
+    }
+}

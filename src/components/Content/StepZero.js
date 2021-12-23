@@ -45,6 +45,7 @@ const StepZero = () => {
   }, [id])
   return (
     <div className='ecc-form__step ecc-form__step--zero'>
+      <h2 className='ecc-mobile__header'>Επιλογή μοντέλου</h2>
       <ul className='ecc-sidebar ecc-step__models'>
         {cars.map((car) => (
           <Model key={car.id} cr={car} />

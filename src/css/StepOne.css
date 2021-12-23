@@ -55,3 +55,9 @@
   font-size: 1.2rem;
   border-bottom: 2px solid rgba(0, 0, 0, 0.3);
 }
+
+@media only screen and (max-width: 767px) {
+  .ecc-form__step.ecc-form__step--one {
+    width: 100%;
+  }
+}

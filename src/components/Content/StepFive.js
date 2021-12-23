@@ -42,6 +42,7 @@ const StepFive = () => {
 
   return (
     <div className='ecc-form__step ecc-form__step--five'>
+      <h2 className='ecc-mobile__header'>Επιλογή εγγύησης</h2>
       <ul className='ecc-sidebar fixed-height ecc-step__guarantees'>
         {guarantees.map((gte, idx) => (
           <Guarantee key={idx} gte={gte} />

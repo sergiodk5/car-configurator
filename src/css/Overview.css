@@ -20,13 +20,16 @@
 
 .ecc-summary__img {
     text-align: center;
+    overflow: hidden;
 }
 
 .ecc-summary__img img {
-    width: auto;
     height: 200px;
-    max-width: initial;
+    max-width: none;
     object-fit: cover;
+    object-position: center center;
+    display: block;
+    margin: 0 auto;
 }
 
 .ecc-summary__title {
@@ -44,4 +47,32 @@
 .ecc-summary__descr p {
     text-align: center;
     margin: 0;
+}
+
+button.btn-send {
+    margin-left: auto;
+    background: #00427a;
+    color: #fff;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    border: 2px solid #00427a !important;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+}
+
+@media only screen and (max-width: 767px) {
+    .ecc-summary__container {
+        flex-direction: column;
+    }
+
+    .ecc-summary__wrapper {
+        width: 100%;
+        margin: 0 0 1rem;
+    }
+
+    .ecc-summary__img img {
+        width: 200px;
+        height: auto;
+        margin: 0 auto;
+    }
 }

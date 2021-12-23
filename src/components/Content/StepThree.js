@@ -39,6 +39,7 @@ const StepThree = () => {
 
   return (
     <div className='ecc-form__step ecc-form__step--three'>
+      <h2 className='ecc-mobile__header'>Επιλογή εσωτερικού</h2>
       <ul className='ecc-sidebar fixed-height ecc-step__extras'>
         {interiors.map((intr, idx) => (
           <Interior key={idx} intr={intr} />

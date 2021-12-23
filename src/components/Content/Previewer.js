@@ -10,6 +10,7 @@ const Previewer = ({ totalWidth }) => {
         <img src={myCar.image} alt={myCar.model} />
       </div>
 
+      <h4 className='ecc-previewer__extras-title'>Έχετε επιλέξει</h4>
       <div className='ecc-previewer__extras'>
         {myCar.battery.hasOwnProperty('type') && (
           <div className='ecc-previewer__box ecc-previewer__battery'>

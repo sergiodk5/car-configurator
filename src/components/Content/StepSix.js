@@ -36,6 +36,7 @@ const StepSix = () => {
 
   return (
     <div className='ecc-form__step ecc-form__step--six'>
+      <h2 className='ecc-mobile__header'>Επιλογή τρόπου πληρωμής</h2>
       <ul className='ecc-sidebar fixed-height ecc-step__payments'>
         {payments.map((pay, idx) => (
           <Payment key={idx} pay={pay} />
